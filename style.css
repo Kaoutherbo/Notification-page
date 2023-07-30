@@ -106,11 +106,15 @@ color: var(--Blue);
     margin-top:.5rem;
     margin-left: .5rem;
 }
+.unread.read::after {
+  content: none;
+}
+
 .conver{ 
     display: flex;
     gap: 1rem;
     height: max-content;
-    padding: 18px 10px;
+    padding: 10px;
 }
 
 .conver-unread img,.conver img{
