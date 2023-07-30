@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+   /* Colors */
+
+    /* Primary */
+
+--Red: hsl(1, 90%, 64%);
+--Blue: hsl(219, 85%, 26%);
+
+    /* Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Very-light-grayish-blue: hsl(210, 60%, 98%);
+--Light-grayish-blue1: hsl(211, 68%, 94%);
+--Light-grayish-blue2: hsl(205, 33%, 90%);
+--Grayish-blue: hsl(219, 14%, 63%);
+--Dark-grayish-blue: hsl(219, 12%, 42%);
+--Very-dark-blue: hsl(224, 21%, 14%);
+
+    /*  Fonts */
+--Font-size: 16px;
+--Font-Family: 'Plus Jakarta Sans',sans-serif;
+--Font-Weight-semibold: 500;
+--Font-Weight-bold: 800;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: var(--Font-Family);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.container{
+background-color: var(--White);
+border-radius: 10px;
+margin-top: 1.7rem;
+padding: 2rem;
+width: 700px;
+height: 760px;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+box-shadow: 3px 3px var(--Light-grayish-blue2);
+}
+img{
+    max-width: 100%;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.num{
+    background-color: var(--Blue);
+    color: var(--White);
+    padding: 0 .7rem;
+    border-radius: 5px;
+    margin-left: .6rem;
+}
+nav h1{
+    color: var(--Very-dark-blue);
+    font-size: 1.4rem;
+    font-weight: var(--Font-Weight-bold);
+}
+nav p{
+    cursor: pointer;
+    font-size: var(--Font-size);
+    color: var(--Dark-grayish-blue);
+    font-weight: var(--Font-Weight-semibold);
+    margin-top: .4rem;
+}
+nav p:hover{
+color: var(--Blue);
+}
+.conversations{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+.conver-unread{
+    display: flex;
+    gap: 1rem;
+    background-color: var(--Very-light-grayish-blue);
+    border-radius: 10px;
+    height: 70px;
+    padding: 18px;
+}
+
+.unread::after{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--Red);
+    border-radius: 50%;
+    margin-top:.5rem;
+    margin-left: .5rem;
+}
+.conver{ 
+    display: flex;
+    gap: 1rem;
+    height: max-content;
+    padding: 18px 10px;
+}
+
+.conver-unread img,.conver img{
+    width: 45px;
+    height: 45px;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.description .time,p{
+    color: var(--Grayish-blue);
+}
+.conver-des{
+    display: flex;
+    justify-content: space-between;
+}
+.img-right img{
+    width: 50px;
+    height: 50px;
+    margin-top: .7rem;
+    cursor: pointer;
+}
+.name{
+    color: var(--Very-dark-blue);
+    font-size: var(--Font-size);
+    font-weight: var(--Font-Weight-bold);
+    cursor: pointer;
+    margin-right: .3rem;
+}
+.name:hover{
+    color: var(--Blue);
+}
+.club{
+    color: var(--Blue);
+    margin-left: .3rem;
+    cursor: pointer;
+}
+
+.post{
+    color: var(--Dark-grayish-blue);
+    line-height: 1.4;
+    cursor: pointer;
+}
+.post:hover{
+    color: var(--Blue);
+}
+.message{
+    margin-left: 5rem;
+    padding: 1.2rem;
+    border:1px solid var(--Light-grayish-blue2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.message:hover{
+    background-color: var(--Light-grayish-blue1);
+    border:1px solid transparent;
+}
+.message p{
+    line-height: 1.2;
+}
+@media (max-width:700px) {
+    body{
+        background-color: var(--White);
+    }
+    .container{
+        width: 100%;
+        height:100vh;
+        gap: 1rem;
+        margin-top: 0;
+        padding: 1.1rem;
+        box-shadow: none;
+        gap: 2rem;
+    }
+   nav h1{
+    font-size: 18px;
+   }
+   .num{
+    margin-left: 0;
+   }
+   .conver,.conver-des{
+    height: 100px;
+    padding: 0;
+   }
+   .conver-des{
+    gap: 1rem;
+   }
+   .message{
+    margin-top: -2rem;
+    margin-bottom:1rem ;
+   }
+   .conver-unread{
+    padding: 0;
+    height: max-content;
+   }
+   .conver-unread .description{
+    padding: 7px;
+   }
+   .conver-unread img{
+    transform: translate(20%,30%);
+   }
+   .conver img{
+    transform: translateX(20%);
+   }
+   .img-right{
+    transform: translateY(-15%);
+   }
+}
